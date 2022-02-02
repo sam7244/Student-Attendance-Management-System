@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+<input type="text" name="textField" />
+<textarea rows="4" cols="30" id="texta"></textarea>
+<input type="submit" value="next" />
+<script type="text/javascript">
+	$(document).ready(function () {
+    $('input[type="submit"]').attr('disabled', true);
+    $('input[type="text"],textarea').on('keyup', function () {
+        var textarea_value = $("#texta").val();
+        var text_value = $('input[name="textField"]').val();
+        if (textarea_value != '' && text_value != '') {
+            $('input[type="submit"]').attr('disabled', false);
+        } else {
+            $('input[type="submit"]').attr('disabled', true);
+        }
+    });
+});
+</script>
+</body>
+</html>

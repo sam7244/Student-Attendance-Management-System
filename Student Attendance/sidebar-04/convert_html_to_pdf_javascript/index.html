@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Convert HTML to PDF using JavaScript by DotNetTec</title>
+
+<!-- jQuery library -->
+<script src="js/jquery.min.js"></script>
+
+<!-- jsPDF library -->
+<script src="js/jsPDF/dist/jspdf.min.js"></script>
+
+<script>
+/*
+
+
+/*
+ * Convert HTML content to PDF
+ */
+function convert_HTML_To_PDF() {
+	var doc = new jsPDF();
+	var elementHTML = $('#contnet').html();
+	var specialElementHandlers = {
+		'#elementH': function (element, renderer) {
+			return true;
+		}
+	};
+	doc.fromHTML(elementHTML, 15, 15, {
+        'width': 170,
+        'elementHandlers': specialElementHandlers
+    });
+	
+	// Save the PDF
+	doc.save('sample-document.pdf');
+}
+</script>
+</head>
+<body>
+
+
+
+<button onclick="convert_HTML_To_PDF()">Convert HTML to PDF</button>
+
+<!-- HTML content for PDF creation -->
+<div id="contnet">
+	<h1>What is Lorem Ipsum?</h1>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+<div id="elementH"></div>
+</body>
+</html>

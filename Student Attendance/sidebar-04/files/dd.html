@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+    	* { font: 17px Calibri; }
+    </style>
+</head>
+<body>
+    <h3>Enter some values in the text to enable the button!</h3>
+    <input type="text" id="txt" onkeyup="manage(this)" /><br><br>
+	<input type="text" id="t" onkeyup="manage(this)" /><br><br>
+	<input type="text" id="d" onkeyup="manage(this)" /><br><br>
+    <input type="submit" id="btSubmit" disabled />
+</body>
+
+<script>
+	
+	let manage = () => { 
+    	let bt = document.getElementById('btSubmit');
+       if (txt.value != '' && t.value != '' && d.value !='') {
+            bt.disabled = false;
+       }
+        else {
+            bt.disabled = true;
+        }
+     }
+</script>
+</html>

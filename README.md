@@ -1,0 +1,1 @@
+It is developed Using HTML,CSS,PHP, JavaScript languages.online Students attendance  management system deals with the maintenance of the student’s attendance Details. It generates the attendance of the student on the basis of presence in class.
